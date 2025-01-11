@@ -1,6 +1,32 @@
-@dotnet_minimal_api_HostAddress = http://localhost:5166
+@TodoApi_HostAddress = https://localhost:7014
 
-GET {{dotnet_minimal_api_HostAddress}}/weatherforecast/
-Accept: application/json
+
+POST {{TodoApi_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  "name":"walk dog",
+  "isComplete":true
+}
+
+###
+Get {{TodoApi_HostAddress}}/todoitems
+
+###
+
+GET {{TodoApi_HostAddress}}/todoitems/1
+
+###
+
+Put {{TodoApi_HostAddress}}/todoitems/1
+Content-Type: application/json
+
+{
+  "name": "feed fish",
+  "isComplete": false
+}
+###
+
+DELETE {{TodoApi_HostAddress}}/todoitems/1
 
 ###
